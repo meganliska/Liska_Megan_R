@@ -24,8 +24,8 @@ tmp <- c(4,6,3)
 tmp
 ```
 ###e).
-repeats vector tmp 10 times
-rep repeats the first argument 
+repeats vector tmp 10 times.
+ rep repeats the first argument 
 ```{r}
 rep(tmp,10) 
 ```
@@ -40,8 +40,8 @@ rep(tmp,times = c(10,20,30))
 ```
 
 ##Question 2
-Create a vector of the values of e^xcos(x) at x=3,3.1,3.2...5.9,6
-seq builds a vector of values from 3 to 6 incriminted by .1 
+Create a vector of the values of e^xcos(x) at x=3,3.1,3.2...5.9,6.
+ seq builds a vector of values from 3 to 6 incriminted by .1 
 ```{r}
 x <- seq(3,6,by=0.1) 
 exp(x)*cos(x) 
