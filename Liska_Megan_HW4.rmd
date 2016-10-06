@@ -127,7 +127,7 @@ Finds the index positions in yVec of the values which are >600
 which(yVec > 600)
 ```
 ###c).
-Finds the values in xVec which correspond to values in yVec
+Finds the values in xVec which correspond to values in yVec which are > 600?
 ```{r}
 x600 <- xVec[yVec>600]
 x600
