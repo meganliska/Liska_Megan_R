@@ -33,6 +33,7 @@ rep(tmp,10)
 ```{r}
 rep(tmp,l=31)
 ```
+Makes the vector where 4 occurs 11 times and 6 and 3 occur 10 times
 ###g).
 makes tmp where there are 10 4's in a row, 20 6's and then 30 3's
 ```{r}
@@ -96,10 +97,12 @@ create vector (y2-x1,...,yn-xn-1)
 yVec[c(2:250)]-xVec[c(1:249)]
 ```
 ###b).
+Create vector sin(y1)/cos(x2),...sin(yn-1)/cos(n)
 ```{r}
 sin(yVec[c(1:249)])/cos(xVec[c(2:250)])
 ```
 ###c).
+create vector x1-2x2-x3-...-xn
 ```{r}
 xVec[c(1:248)]+2*xVec[c(2:249)]-xVec[c(3:250)]
 ```
