@@ -59,13 +59,13 @@ exp(x)*cos(x)
 ###a).
 create i which goes from 1 to 100 incrimented by 1. Sum creates an finite sum of the values of i
 ```{r}
-i = seq(1,100,by=1) 
+i <- seq(1,100,by=1) 
 sum(i^3+4*i^2) 
 ```
 ###b).
 same process as part a
 ```{r}
-i = seq(1,25,by=1) 
+i <- seq(1,25) 
 sum(2^i/i + 3^i/i^2)
 ```
 
@@ -117,28 +117,28 @@ yVec <- sample(0:999,250,replace=T)
 ###a).
 Pick the values in yVec which are >600
 ```{r}
-y600 <- yVec[yVec>600]
+y600 <- yVec[yVec > 600]
 y600
 ```
 ###b).
 Finds the index positions in yVec of the values which are >600
 ```{r}
-which(yVec>600)
+which(yVec > 600)
 ```
 ###c).
 Finds the values in xVec which correspond to values in yVec
 ```{r}
-x600<-xVec[yVec>600]
+x600 <- xVec[yVec>600]
 ```
 ###d).
 
 ```{r}
-sqrt(abs(xVec-mean(xVec)))
+sqrt(abs(xVec - mean(xVec)))
 ```
 ###e).
 Finds how many values in yVec are within 200 of the max value
 ```{r}
-sum(yVec>max(yVec)-200)
+sum(yVec > max(yVec) - 200)
 ```
 ###f).
 Finds how many values in xVec are divisible by 2.
