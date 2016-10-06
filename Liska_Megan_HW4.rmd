@@ -84,9 +84,3 @@ yVec[c(T,F,F)]
 ##Question 8
 1+sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2))) 
 #cumprod takes the cumulative product of an array of elements
-
-
-
-
-
-
