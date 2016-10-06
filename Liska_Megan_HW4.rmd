@@ -28,73 +28,119 @@ rep(tmp,10)
 rep(tmp,l=31)
 ```
 ###g).
+```{r}
 rep(tmp,times = c(10,20,30))
+```
 
 ##Question 2
-###seq builds a vector of values from 3 to 6 incriminted by .1 
+seq builds a vector of values from 3 to 6 incriminted by .1 
+```{r}
 x <- seq(3,6,by=0.1) 
 exp(x)*cos(x) 
+```
 
 ##Question 3
 ###a).
+```{r}
 (0.1^seq(3,36,by=3))*(0.2^seq(1,34,by=3))
+```
 ###b).
+```{r}
 (2^seq(1,25,by=1))/(1:25) 
-
+```
 ##Question 4
-###a).create i which goes from 1 to 100 incrimented by 1. Sum creates an finite sum of the values of i
+###a).
+create i which goes from 1 to 100 incrimented by 1. Sum creates an finite sum of the values of i
+```{r}
 i = seq(1,100,by=1) 
 sum(i^3+4*i^2) 
-###b).same process as part a 
+```
+###b).
+same process as part a
+```{r}
 i = seq(1,25,by=1) 
 sum(2^i/i + 3^i/i^2)
+```
 
 ##Question 5
-###a).paste converts its arguments into charcter strings and then seperates them by sep (second argument)
+###a).
+paste converts its arguments into charcter strings and then seperates them by sep (second argument)
+```{r}
 paste('label',1:30) 
-
-###b).make sure no space between fn and number by using sep = ""
+```
+###b).
+make sure no space between fn and number by using sep = ""
+```{r}
 paste('fn',1:30,sep = "")
-
+```
 ##Question 6
-###Execute the following lines which creates two vectors of random integers with length 250
+Execute the following lines which creates two vectors of random integers with length 250
+```{r}
 set.seed(50) 
 xVec <- sample(0:999,250,replace=T) 
 yVec <- sample(0:999,250,replace=T)
-
+```
 
 ###a).
+```{r}
 yVec[c(2:250)]-xVec[c(1:249)] #subtracts x from y
+```
 ###b).
+```{r}
 sin(yVec[c(1:249)])/cos(xVec[c(2:250)])
+```
 ###c).
+```{r}
 xVec[c(1:248)]+2*xVec[c(2:249)]-xVec[c(3:250)]
-###d).sum calculates the sum
+```
+###d).
+sum calculates the sum
+```{r}
 sum(exp(-xVec[c(2:250)])/(xVec[c(1:249)]+10)) 
-
+```
 ##Question 7 
-###We use the same random vectors from 6
+We use the same random vectors from 6
+```{r}
 set.seed(50)
 xVec <- sample(0:999,250,replace=T)
 yVec <- sample(0:999,250,replace=T)
+```
 ###a).
+```{r}
 y600 <- yVec[yVec>600]
 y600
+```
 ###b).
+```{r}
 which(yVec>600)
+```
 ###c).
+```{r}
 x600<-xVec[yVec>600]
+```
 ###d).
+```{r}
 sqrt(abs(xVec-mean(xVec)))
+```
 ###e).
+```{r}
 sum(yVec>max(yVec)-200)
+```
 ###f).
+```{r}
 sum(xVec%%2==0)
+```
 ###g).
+```{r}
 xVec[order(yVec)]
+```
 ###h).
+```{r}
 yVec[c(T,F,F)]
+```
 
 ##Question 8
-###cumprod takes the cumulative product of an array of elements
+cumprod takes the cumulative product of an array of elements
+```{r}
 1+sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2))) 
+```
