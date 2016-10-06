@@ -155,10 +155,11 @@ xVec[order(yVec)]
 ```
 ###h).
 Picks out the elements in yVec at the index positions 1,4,7,10...
+
 ```{r}
 yVec[c(T,F,F)]
 ```
-
+c(T,F,F) takes the first element out of every three elements.
 ##Question 8
 cumprod takes the cumulative product of an array of elements
 ```{r}
