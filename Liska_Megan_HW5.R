@@ -1,7 +1,8 @@
 #HW 5
 #Group C
 #1 print to console all methods and attributes associated with a dataframe
-require(ggplot2)#we need this cause diamonds is in ggplot2
+require(ggplot2)#we need this to get the diamonds dataframe
+
 #1b write code to determine the number of columns in a dataframe
 #since our code needs to work with any dataframe our answers will be
 #functions that accept a dataframe as its input
@@ -18,7 +19,7 @@ methodcol <- function(x){
   
   print(attributes(x))#gives the attributes of the dataset
   print(methods(class = x)) #methods will print
-  #we set the class as data frame to 
+  #we set the class as our dataframe 
  
   
   print(ncol(x)) #gives the number of columns
@@ -34,7 +35,7 @@ rownumber <- function(x){
   #x - a dataframe
   
   #Returns
-  #Frequency table 
+  #a number 
   
   print(nrow(x)) #nrow gives the number of rows 
   
@@ -44,17 +45,17 @@ rownumber(diamonds) #test case
 #-------------------------------------------------------------
 #3- write code to extract the column names from a dataframe and print 
 #the names of the columns (one per line) to the console
-columnnumber <- (x){
+columnnumber <- function(x){
   #columnnumber takes a dataframe, extracts the column names and prints 
   #them to the console one per line
   #Parameters
   #x - a dataframe
   
   #Returns
-  #Frequency table 
+  #list of column names 
   
-  cat(colnames(x), sep = "\n")#gives the names of the columns
-  #state what cat does 
+  print(cat(colnames(x), sep = "\n")) #gives the names of the columns
+  #cat function concatinates data and prints it to console one per line 
   
 }
 
@@ -69,8 +70,8 @@ columnclass <- function(x){
   #x - a dataframe
   
   #Returns
-  #Frequency table 
-  sapply(diamonds, class)#class of the columns 
+  #type of each column 
+  sapply(diamonds, class) #applies class to each of the columns 
   
 }
 
@@ -84,7 +85,7 @@ columnmean <- function(x){
   #x - a dataframe
   
   #Returns
-  #Frequency table 
+  #mean of the columns  
   
   numeric <- sapply(x,is.numeric) #sapply applies is.numeric to each column
   #in the dataframe
@@ -98,7 +99,7 @@ columnmean(diamonds) #test case
 #6 write code that will loop through any dataframe and create
 #a frequency table for every factor column. 
 #hint- use summary rather than a for loop 
-freqtable <- (x){
+freqtable <- function(x){
   #freqtable loops through a dataframe and creates a frequency table for ever
   #factor column. 
   #Parameters
@@ -121,11 +122,12 @@ findNA <- function(x){
   # x - a dataframe
   
   #Returns
+  #Number of columns and percentages 
   
   countNA <- nrow(x) - nrow(na.omit(x)) #creates a variable which is the 
   #number of rows minus the number of rows without NA (na.omit finds these)
   
-  print(countNA)
+  print(countNA) #prints the variable
   
   paste(100*(countNA/nrow(x)), "%") #finds the percentage of rows
   #paste helps concatinate 
@@ -150,18 +152,19 @@ corCoef <- function(x){
   #we will use an if-else statement for this problem
   #we need at least 2 columns to find the Pearson correlation
   if(ncol(a) >= 2) {
-     b <- combn(colnames(a), 2)
+     b <- combn(colnames(a), 2) #finds all combinations of the name pairs
      
-     pairs <- paste(b[1,], b[2, ], sep = "-")
+     pairs <- paste(b[1,], b[2, ], sep = "-") #makes sure that 
+     
      c <- cor(a, method = "pearson")
      
-     correlation <- c[which(lower.tri(c))]
+     correlation <- c[which(lower.tri(c))] #
      
-     newdf <- data.frame(pairs, correlation)
+     newdf <- data.frame(pairs, correlation) #create a new data frame with our pairs 
      return(newdf)
      
   }
-  else 
+  else  #print this message if we can't find Pearson correlation
     print("Pearson Correlation cannot be computted because there are not enough numeric columns")
 }
 
