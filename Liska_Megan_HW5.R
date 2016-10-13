@@ -22,13 +22,16 @@ methodcol <- function(x){
   
   #Returns:
   #methods, attributes and column number 
+  #some dataframes (like diamonds) have multiple class
+  df <- data.frame(x) #this fixes that issue 
   
-  print(attributes(x))#gives the attributes of the dataset
+  print(methods(class = class(df)))#prints methods with specific dataframe
+  print(attributes(df)) #gives the attributes of the dataset
   #print(methods(class = x)) #methods will print methods with our dataframe
   #we set the class as our dataframe 
  
   
-  print(ncol(x)) #gives the number of columns
+  print(ncol(df)) #gives the number of columns
 }
 
 
