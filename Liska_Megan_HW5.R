@@ -16,11 +16,12 @@ methodcol <- function(x){
   #methodcol takes a dataframe and prints to the console
   #all methods and attributes associated with it. It also prints
   #the number of columns in the dataframe
-  #Parameters
+  
+  #Parameters:
   #x - a dataframe
   
-  #Returns
-  #methods and attributes 
+  #Returns:
+  #methods, attributes and column number 
   
   print(attributes(x))#gives the attributes of the dataset
   print(methods(class = x)) #methods will print methods with our dataframe
@@ -36,10 +37,11 @@ methodcol("diamonds") #test case with the diamonds dataframe
 #2- write code to determine how many rows are in a dataframe
 rownumber <- function(x){
   #rownumber takes a dataframe and determines how many rows it has
-  #Parameters
+  
+  #Parameters:
   #x - a dataframe
   
-  #Returns
+  #Returns:
   #a number 
   
   print(nrow(x)) #nrow gives the number of rows 
@@ -52,11 +54,12 @@ rownumber(diamonds) #test case
 #the names of the columns (one per line) to the console
 columnnumber <- function(x){
   #columnnumber takes a dataframe, extracts the column names and prints 
-  #them to the console one per line
-  #Parameters
-  #x - a dataframe
+  #them to the console one per line.
   
-  #Returns
+  #Parameters
+  #x - a dataframe:
+  
+  #Returns:
   #list of column names 
   
   print(cat(colnames(x), sep = "\n")) #gives the names of the columns
@@ -71,10 +74,11 @@ columnnumber(diamonds) #test case
 columnclass <- function(x){
   #columnclass takes a dataframe and determines the type of each column
   #and prints that information to the console
-  #Parameters
+  
+  #Parameters:
   #x - a dataframe
   
-  #Returns
+  #Returns:
   #type of each column 
   sapply(diamonds, class) #applies class to each of the columns 
   
@@ -86,10 +90,10 @@ columnclass(diamonds) #test case
 columnmean <- function(x){
   #columnmean takes a dataframe as its input, calculates the mean of the
   #numeric columns and labels the output with the mean of the column
-  #Parameters
+  #Parameters:
   #x - a dataframe
   
-  #Returns
+  #Returns:
   #mean of the columns  
   
   numeric <- sapply(x,is.numeric) #sapply applies is.numeric to each column
@@ -107,10 +111,10 @@ columnmean(diamonds) #test case
 freqtable <- function(x){
   #freqtable loops through a dataframe and creates a frequency table for ever
   #factor column. 
-  #Parameters
+  #Parameters:
   #x - a dataframe
   
-  #Returns
+  #Returns:
   #Frequency table 
   factorcols <- x[sapply(x, is.factor)] #uses sapply to grab the columns of 
   #dataframe x which are factor columns (finds factor columns using is.factor)
@@ -124,10 +128,10 @@ findNA <- function(x){
   #findNA loops through any dataframe and prints the number of columns
   #containing NAs and the percentage of rows with NAs
   
-  #Parameters
+  #Parameters:
   # x - a dataframe
   
-  #Returns
+  #Returns:
   #Number of columns and percentages 
   
   countNA <- nrow(x) - nrow(na.omit(x)) #creates a variable which is the 
@@ -179,7 +183,7 @@ corCoef <- function(x){
   else  #print this message if we can't find Pearson correlation
     print("Pearson Correlation cannot be computted because there are not enough numeric columns")
 }
-
+corCoef(diamonds)#test case 
       
 
 
