@@ -107,7 +107,8 @@ freqtable <- function(x){
   
   #Returns
   #Frequency table 
-  factorcols <- x[sapply(x, is.factor)]
+  factorcols <- x[sapply(x, is.factor)] #uses sapply to grab the columns of 
+  #dataframe x which are factor columns (finds factor columns using is.factor)
   print(summary(factorcols))
 }
 freqtable(diamonds) #test case 
@@ -133,6 +134,9 @@ findNA <- function(x){
   #paste helps concatinate 
   
 }
+findNA(diamonds) #test case
+#since diamonds had no NAs do another test case with another dataset
+findNA(attenu) #second test case 
 #--------------------------------------------------------------
 #8 
 corCoef <- function(x){
@@ -154,11 +158,14 @@ corCoef <- function(x){
   if(ncol(a) >= 2) {
      b <- combn(colnames(a), 2) #finds all combinations of the name pairs
      
-     pairs <- paste(b[1,], b[2, ], sep = "-") #makes sure that 
+     pairs <- paste(b[1,], b[2, ], sep = "-") #makes sure that the column names
+     #are seperated by - using paste function to paste the columns
      
-     c <- cor(a, method = "pearson")
+     c <- cor(a, method = "pearson")#finds the pearson correlation using the cor 
+     #function and creates of matrix of the values
      
-     correlation <- c[which(lower.tri(c))] #
+     correlation <- c[which(lower.tri(c))] #gets the correclation values of the lower 
+     #triangular matrix since those match the column pairs 
      
      newdf <- data.frame(pairs, correlation) #create a new data frame with our pairs 
      return(newdf)
