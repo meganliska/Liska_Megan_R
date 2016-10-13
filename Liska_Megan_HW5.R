@@ -188,26 +188,7 @@ corCoef <- function(x){
 }
 corCoef(diamonds)#test case 
 
-#PART 1) - will loop through any dataframe and determine the number of rows containing NA (missing value) in each column
 
-print(apply(sapply(df,is.na), 2, sum))
-#starting from the inside, we use sapply to find all NA in our dataframe using is.na
-#we then use apply to take the sum of the columns (which is what the 2 is) for the sapply
-#we then print the result, which in this instance shows there are 0 NA in each column
-#of the dataframe
-
-#PART 2) - loop through any dataframe and determine the percentage of rows containing an NA in any of the columns.
-
-paste(sum(!complete.cases(df))/nrow(df),sep="","%")
-
-employee <- c(7,24, NA)
-salary <- c(21000, 2, NA)
-startdate <- as.Date(c('2010-11-1','2008-3-25','2007-3-14'))
-
-employ.data <- data.frame(employee, salary, startdate)
-print(employ.data)
-length(row(is.na(employ.data)))
-is.na(employ.data)
       
 
 
