@@ -6,6 +6,9 @@ require(ggplot2)#we need this to get the diamonds dataframe
 #1b write code to determine the number of columns in a dataframe
 #since our code needs to work with any dataframe our answers will be
 #functions that accept a dataframe as its input
+#I was unsure about whether you wanted methods associated with a specific
+#dataframe or methods associated with a specific dataframe so I did both
+
 
 methods(class = "data.frame") #prints the methods associated with the dataframe
 #object 
@@ -20,7 +23,7 @@ methodcol <- function(x){
   #methods and attributes 
   
   print(attributes(x))#gives the attributes of the dataset
-  print(methods(class = x)) #methods will print
+  print(methods(class = x)) #methods will print methods with our dataframe
   #we set the class as our dataframe 
  
   
