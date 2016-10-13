@@ -7,6 +7,8 @@ require(ggplot2)#we need this to get the diamonds dataframe
 #since our code needs to work with any dataframe our answers will be
 #functions that accept a dataframe as its input
 
+methods(class = "data.frame") #prints the methods associated with the dataframe
+#object 
 methodcol <- function(x){
   #methodcol takes a dataframe and prints to the console
   #all methods and attributes associated with it. It also prints
@@ -131,7 +133,7 @@ findNA <- function(x){
   print(countNA) #prints the variable
   
   paste(100*(countNA/nrow(x)), "%") #finds the percentage of rows
-  #paste helps concatinate 
+  #paste helps concatinate vecotrs after convering them to characters
   
 }
 findNA(diamonds) #test case
