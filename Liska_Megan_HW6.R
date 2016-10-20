@@ -61,7 +61,7 @@ carathist <- ggplot(diamonds, aes(carat)) +geom_histogram(aes(y = ..density..,co
 #makes the carat histogram without any labels, title or legend
 
 vp1 <- viewport(width = .4, height = .2, x=.265 , y= .15)
-vp2 <- viewport(width = .4, height = .2, x =.8, y= .65)
+vp2 <- viewport(width = .4, height = .2, x =.8, y= .75)
 print(mainplot)
 print(pricehist, vp = vp1)
 #prints the price histogram histogram in viewport 1 spot
