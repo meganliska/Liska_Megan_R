@@ -10,19 +10,34 @@ ggplot(diamonds, aes(x=carat, y=price, color=color)) + geom_point() + ggtitle("D
 
 #uses ggplot to plot the diamond set in a scatterplot
 #aes selects the carat and price columns as our x and y
-#ggtitle adds the title xlab and ylab add labels for axis
+#ggtitle adds the title 
+#xlab and ylab add labels for axis
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #3
 #remove the non-linearity and replot
-ggplot(diamonds, aes(x=log(carat), y=log(price), color=color)) + geom_point() + ggtitle("Diamonds- Weight to Price by Color") + xlab("Weight") + ylab("Price") + labs(color="factor(color)")
-
+ggplot(diamonds, aes(x=log(carat), y=log(price), color=color)) + geom_point() + ggtitle("Diamonds- Weight to Price(Linear)") + xlab("Weight") + ylab("Price") + labs(color="factor(color)")
+#this is the same as 2 except we take the log of carat and price as our
+#x and y in order to what
 #-----------------------------------------------------------------------
 #4
 linmodel <- lm(log(price) ~ log(carat), data = diamonds)
+#linmodel does what 
 residual <- resid(linmodel)
-ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +geom_point() + ggtitle("Diamonds- Weight to Price by Color(Linear)") + xlab("Weight") + ylab("Price") + labs(color="factor(color)")
+#residual does what
+ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +geom_point() + ggtitle("Diamonds- Weight to Price by Color") + xlab("Weight") + ylab("Price") + labs(color="factor(color)")
 
 #-----------------------------------------------------------------------
 #5
-#y=..density 
+#First make the density histograms
+
+
+ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +geom_point() + ggtitle("Diamonds- Weight to Price by Color(Linear)") + xlab("Weight") + ylab("Price Residuals") + labs(color="factor(color)")
+a <- ggplot(diamonds, aes(price)) + geom_histogram(aes(y = ..density.., color=factor(color)), binwidth = 30)
+b <- ggplot(diamonds, aes(carat)) +geom_histogram(aes(y = ..density..,color = factor(color)), binwidth = 30)
+
+vp1 <- viewport(width = .4, height = .2, x=.28 , y= .2 )
+vp2 <- viewport(width = .4, height = .2, x =.28, y= .2)
+print(a, vp = vp1)
+print(b, vp = vp2)
+
