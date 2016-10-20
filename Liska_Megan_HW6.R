@@ -64,7 +64,7 @@ vp1 <- viewport(width = .4, height = .2, x=.265 , y= .15)
 vp2 <- viewport(width = .4, height = .2, x =.8, y= .65)
 print(mainplot)
 print(pricehist, vp = vp1)
-#prints the blank histogram in viewport 1 spot
+#prints the price histogram histogram in viewport 1 spot
 print(carathist, vp = vp2)
-#prints the blank histogram in the viewport 2 spot 
+#prints the carat histogram in the viewport 2 spot 
 
