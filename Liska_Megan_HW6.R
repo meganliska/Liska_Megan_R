@@ -27,12 +27,12 @@ graph2 <- ggplot(diamonds, aes(x=log(carat), y=log(price), color=color)) +
 print(graph2)
 #this is the same as 2 except we take the log of carat and price as our
 #x and y in order to remove the non-linearity 
-#-----------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
 #4
 linmodel <- lm(log(price) ~ log(carat), data = diamonds)
-#linmodel does what 
+#linmodel creates a linear model between the logs of price and carat 
 residual <- resid(linmodel)
-#residual takes the residuals of linmodel (more?)
+#residual takes the residuals of the linear model 
 
 graph3 <- ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +geom_point() + 
   ggtitle("Diamonds- Weight to Price by Color") + xlab("Weight") + ylab("Price") + 
@@ -41,7 +41,7 @@ graph3 <- ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +ge
 print(graph3)
 #plots with log of carat on the x axis and the residuals of price on the y axis
 #legend.position moves the legend to the top of the graph so it matches the one in the problem.
-#-----------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------
 #5
 #First make the density histograms
 #then overlay them using grid package and commands on the graph from the previous problem
@@ -61,7 +61,7 @@ carathist <- ggplot(diamonds, aes(carat)) +geom_histogram(aes(y = ..density..,co
 #makes the carat histogram without any labels, title or legend
 
 vp1 <- viewport(width = .4, height = .2, x=.265 , y= .15)
-vp2 <- viewport(width = .4, height = .2, x =.8, y= .75)
+vp2 <- viewport(width = .4, height = .2, x =.8, y= .65)
 print(mainplot)
 print(pricehist, vp = vp1)
 #prints the blank histogram in viewport 1 spot
