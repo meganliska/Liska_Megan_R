@@ -35,7 +35,7 @@ residual <- resid(linmodel)
 #residual takes the residuals of the linear model 
 
 graph3 <- ggplot(diamonds, aes(x=log(carat), y = (residual), color = color)) +geom_point() + 
-  ggtitle("Diamonds- Weight to Price by Color") + xlab("Weight") + ylab("Price") + 
+  ggtitle("Diamonds- Weight to Price by Color") + xlab("Weight") + ylab("Price Residuals") + 
   labs(color="factor(color)")+theme(legend.position = "top") + 
   theme(plot.title = element_text(size = rel(1.6),colour="blue"))
 print(graph3)
