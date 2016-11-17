@@ -26,7 +26,7 @@ methodcol <- function(x){
   df <- data.frame(x) #this fixes that issue 
   
   print(methods(class = class(df)))#prints methods with specific dataframe
-  print(attributes(df)) #gives the attributes of the dataset
+  #print(attributes(df)) #gives the attributes of the dataset
   #print(methods(class = x)) #methods will print methods with our dataframe
   #we set the class as our dataframe 
  

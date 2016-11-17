@@ -1,6 +1,9 @@
 #Megan Liska
 #HW 4
 
+##Prof G - Need more documentation about what's 
+##Prof G - going on with some of your solutions.
+
 ##Question1
 #a).
 c(1:20)
@@ -29,6 +32,7 @@ exp(x)*cos(x) #multiplies e^x by cos(x) for each value of x
 
 ##Question 4
 #a).
+##Prof G - This should be 10, 100
 i = seq(1,100,by=1) #create i which goes from 1 to 100 incrimented by 1
 sum(i^3+4*i^2) #sum creates an finite sum of the values of i
 #b).
@@ -70,6 +74,7 @@ y600
 which(yVec>600)
 #c).
 x600<-xVec[yVec>600]
+x600
 #d).
 sqrt(abs(xVec-mean(xVec)))
 #e).
